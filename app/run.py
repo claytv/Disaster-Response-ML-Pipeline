@@ -63,7 +63,7 @@ def index():
             ],
 
             'layout': {
-                'title': 'Need of food or water and electricity or shelter',
+                'title': 'People Needing Food and Water or Electricity and Shelter',
                 'yaxis': {
                     'title': "Count"
                 },
@@ -81,7 +81,7 @@ def index():
             ],
 
             'layout': {
-                'title': 'People needing search and rescue or medical help',
+                'title': 'People Needing Search and Rescue or Medical Help',
                 'yaxis': {
                     'title': "Count"
                 },
