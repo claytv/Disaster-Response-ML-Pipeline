@@ -1,6 +1,23 @@
 # Disaster Response Pipeline Project
 The goal of this project was to get experience using natural lanugage processing and machine learning to classify tweets from disaster victims. The model was deployed to a web application which allowed the user to type in some text and the message classifications are displayed so that the user has a better idea how the model works. This application also displays some visualizations based on aggregations on the training data. 
 
+### Files 
+###### app 
+* templates - templates provided by udacity for web page
+* run.py - python file to launch the web app 
+###### data 
+* DisasterResponse.db - database created by process_data.py file
+* disaster_categories.csv - categories that messages can be labeled with
+* disaster_messages.csv - tweets from disasters 
+* process_data.py - python file which processes the data and loads it into DisasterResponse.db
+
+###### exploratory_notebooks 
+* ETL Pipeline Preperation.ipynb - played with the data in order to figure out best way to process data
+* ML Pipeline Preperation.ipynb - used this notebook to create the NLP and ML pipelines 
+
+###### models
+* classifier.pkl - pickle file created by train_classifier.py in order to save the model
+* train_classifier.py - python file which builds, trains and evaluates the model 
 
 ### Instructions
 1. Run the following commands in the project's root directory to set up your database and model.
