@@ -31,6 +31,13 @@ The goal of this project was to get experience using natural lanugage processing
 3. Go to http://0.0.0.0:3001/
 
 
+### View of data
+
+### Data Cleaning 
+When process_data.py is run the following things are done to clean the data 
+* Smesplits the category 
+
+
 ### Web app 
 Right when you arrive to the web app you will see a place to type in a message. Typing in a message and clicking the classify message box will return classification results for that message
 ![webapp1](webapp1.png)  
