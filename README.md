@@ -1,4 +1,9 @@
 # Disaster Response Pipeline Project
+The goal of this project was to get experience using natural lanugage processing and machine learning to classify tweets from disaster victims. The model was deployed to a web application which allowed the user to type in some text and the message classifications are displayed so that the user has a better idea how the model works. This application also displays some visualizations based on aggregations on the training data. 
+
+
+
+
 
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
