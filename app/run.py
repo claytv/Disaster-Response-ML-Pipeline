@@ -43,9 +43,55 @@ def index():
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
+    food_water_count = len(df[(df['water'] == 1) | (df['food'] == 1)])
+    electricity_shelter_count = len(df[(df['electricity'] == 1) | (df['shelter'] == 1)])
+    food_shelt_counts = [food_water_count ,electricity_shelter_count]
+    food_shelt_names = ['Food and Water', 'Electricity and Shelter']
+    
+    search_rescue_count = len(df[(df['search_and_rescue'] == 1)])
+    medical_help_count = len(df[(df['medical_help'] == 1)])
+    search_medical_counts = [search_rescue_count, medical_help_count]
+    search_medical_names = ['Search and Rescue', ' Medical Help']
+    
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
+                {
+            'data': [
+                Bar(
+                    x=food_shelt_names,
+                    y=food_shelt_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Need of food or water and electricity or shelter',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Category"
+                }
+            }
+        },
+                {
+            'data': [
+                Bar(
+                    x=search_medical_names,
+                    y=search_medical_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'People needing search and rescue or medical help',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Category"
+                }
+            }
+        },
         {
             'data': [
                 Bar(
