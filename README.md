@@ -3,10 +3,10 @@ The goal of this project was to get experience using natural lanugage processing
 
 ### Web app 
 Right when you arrive to the web app you will see a place to type in a message. Typing in a message and clicking the classify message box will return classification results for that message
-![webapp1](webapp1.png)
+![webapp1](webapp1.png)  
 
-The home page of the web app also contains some visualizations of the data
-![webapp3](webapp3.png)
+The home page of the web app also contains some visualizations of the data  
+![webapp3](webapp3.png)  
 ![webapp4](webapp4.png)
 
 
