@@ -31,12 +31,27 @@ The goal of this project was to get experience using natural lanugage processing
 3. Go to http://0.0.0.0:3001/
 
 
-### View of data
+### View of Data
+#### Messages Data
+![messages](messages.png)  
+#### Categories Data
+![categories](categories.png)  
 
 ### Data Cleaning 
-When process_data.py is run the following things are done to clean the data 
-* Smesplits the category 
+When process_data.py is run the following things are done
+* Reads data in from csv files and merges the two together into one dataframe
+* Converts category feature from its current format into 36 indicator variables
+* Saves the data into a database 
 
+### Building the Model
+When traing_classifier.py is run the following things are done
+* Loads the data from a database and seperates predictor and response variables
+* Tokenizes each value in the message column using word_tokenize()
+* Converts every message to lower case and converts every word to its root form using a lemmatizer
+* Uses sklearns Pipeline feature to implement CountVectorizer, TfidfTransformer and MultiOutputClassifier using AdaBoost for for the classifier
+* Creates a GridSearchCV object to optimize parameters for the model 
+* Returns accuracy score, weighted precision score and weighted recall score
+* Saves the model as a pickle file 
 
 ### Web app 
 Right when you arrive to the web app you will see a place to type in a message. Typing in a message and clicking the classify message box will return classification results for that message
