@@ -60,11 +60,11 @@ def tokenize(text):
 
 
 def build_model():
-    '''creates pipeline based off of the model built
-        in the exploratory part of the project
+    '''creates pipeline and runs GridSearch cross validation 
+        to optimize paramters of the model
         
         returns
-            * pipeline - model to be trained
+            * cv - model to be trained
     '''                   
                            
     pipeline = Pipeline([
@@ -72,10 +72,16 @@ def build_model():
             ('vect', CountVectorizer(tokenizer=tokenize)),
             ('tfidf', TfidfTransformer())
         ])),
-        ('clf', MultiOutputClassifier(AdaBoostClassifier(learning_rate=.7, n_estimators=100)))
+        ('clf', MultiOutputClassifier(AdaBoostClassifier()))
     ])
     
-    return pipeline
+    parameters = {
+    'clf__estimator__learning_rate': [.7,1],
+    'clf__estimator__n_estimators': [50,100],
+    }
+    cv = GridSearchCV(pipeline, param_grid = parameters)
+    
+    return cv
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
